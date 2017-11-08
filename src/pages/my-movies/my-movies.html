@@ -1,0 +1,29 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+      <button menuToggle ion-button icon-only>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Movie App</ion-title>
+    </ion-navbar>
+
+    <ion-toolbar color="secondary">
+      <ion-title>My favorite movies</ion-title>
+    </ion-toolbar>
+
+  </ion-header>
+
+  <ion-content>
+
+    <ion-card>
+      <ion-card-content>
+        <p>You haven't selected any movie</p>
+        <p>Please select one by using the button below</p>
+        <button ion-button icon-left full (click)="findMovie()">
+          <ion-icon name="search"></ion-icon>
+          On going movies
+        </button>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Movie List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid *ngIf="movies">
+    <ion-row>
+      <ion-col col-4 *ngFor="let movie of movies">
+        <img [src]="movie.poster_path" (click)="goToDetail(movie)" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

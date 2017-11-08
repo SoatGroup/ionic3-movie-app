@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title *ngIf="movie">{{movie.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngIf="movie">
+    <img [src]="movie.poster_path" />
+    <ion-card-header>
+      <h2>Synopsis
+        <ion-badge color="primary">{{movie.vote_average}}</ion-badge>
+      </h2>
+    </ion-card-header>
+    <ion-card-content>{{movie.overview}}</ion-card-content>
+  </ion-card>
+
+</ion-content>
