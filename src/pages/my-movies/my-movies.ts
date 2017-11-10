@@ -1,4 +1,4 @@
-import { MovieDetailPage } from '../movie-detail/movie-detail';
+import { MovieDetailPage } from "../movie-detail/movie-detail";
 import { UserPreferencesProvider } from "../../providers/user-preferences/user-preferences";
 import { IMovie } from "../../interface/IMovie";
 import { MovieListPage } from "../movie-list/movie-list";
@@ -11,7 +11,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   templateUrl: "my-movies.html"
 })
 export class MyMoviesPage {
-  favoriteMovies: IMovie[] = [];
+  favoriteMovies: IMovie[];
 
   constructor(
     public navCtrl: NavController,

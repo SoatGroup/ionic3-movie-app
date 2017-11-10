@@ -15,7 +15,7 @@
 
   <ion-content>
 
-    <ion-card *ngIf="favoriteMovies; else noFavorite">
+    <ion-card *ngIf="favoriteMovies && favoriteMovies.length; else noFavorite">
       <ion-list>
         <ion-list-header class="my-movies-header">Favorite Movies</ion-list-header>
         <ion-item *ngFor="let movie of favoriteMovies" (click)="goToDetail(movie)">
@@ -43,6 +43,7 @@
         </button>
       </ion-card-content>
     </ion-card>
+
     <ng-template #noFavorite>
       <ion-card>
         <ion-card-content>
