@@ -2,6 +2,14 @@
 
   <ion-navbar color="primary">
     <ion-title *ngIf="movie">{{movie.title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button incon-only style="font-size: 1.7em" (click)=toggleFavorite()>
+        <ng-template #notFavorite>
+          <ion-icon name="star-outline"></ion-icon>
+        </ng-template>
+        <ion-icon *ngIf="favorite;else notFavorite" name="star"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>

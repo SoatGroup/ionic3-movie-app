@@ -15,15 +15,45 @@
 
   <ion-content>
 
-    <ion-card>
+    <ion-card *ngIf="favoriteMovies; else noFavorite">
+      <ion-list>
+        <ion-list-header class="my-movies-header">Favorite Movies</ion-list-header>
+        <ion-item *ngFor="let movie of favoriteMovies" (click)="goToDetail(movie)">
+          <ion-row>
+            <ion-col col-1>
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col col-6 text-wrap>
+              <h4>{{movie.title}}</h4>
+            </ion-col>
+            <ion-col col-3>
+              <h4>{{movie.release_date}}</h4>
+            </ion-col>
+            <ion-col col-2>
+              <ion-badge color="primary">{{movie.vote_average}}</ion-badge>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
       <ion-card-content>
-        <p>You haven't selected any movie</p>
-        <p>Please select one by using the button below</p>
-        <button ion-button icon-left full (click)="findMovie()">
+        <p>To choose more movies, click on this button.</p>
+        <button icon-left ion-button full (click)="findMovie()">
           <ion-icon name="search"></ion-icon>
-          On going movies
+          Find a movie
         </button>
       </ion-card-content>
     </ion-card>
+    <ng-template #noFavorite>
+      <ion-card>
+        <ion-card-content>
+          <p>You haven't selected any movie</p>
+          <p>Please select one by using the button below</p>
+          <button ion-button icon-left full (click)="findMovie()">
+            <ion-icon name="search"></ion-icon>
+            Find a movie
+          </button>
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
 
   </ion-content>
