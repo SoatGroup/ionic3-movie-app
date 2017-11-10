@@ -23,7 +23,7 @@ export class MyMoviesPage {
     console.log("ionViewDidLoad MyMoviesPage");
   }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     this.initFavoriteMovies();
   }
 
