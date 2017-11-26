@@ -1,5 +1,5 @@
+import { FavoriteMovieProvider } from "../../providers/favorite-movie/favorite-movie";
 import { MovieDetailPage } from "../movie-detail/movie-detail";
-import { UserPreferencesProvider } from "../../providers/user-preferences/user-preferences";
 import { IMovie } from "../../interface/IMovie";
 import { MovieListPage } from "../movie-list/movie-list";
 import { Component } from "@angular/core";
@@ -16,7 +16,7 @@ export class MyMoviesPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private userPreferencesProvider: UserPreferencesProvider
+    private favoriteMovieProvider: FavoriteMovieProvider
   ) {}
 
   ionViewDidLoad() {
@@ -28,7 +28,7 @@ export class MyMoviesPage {
   }
 
   initFavoriteMovies() {
-    this.userPreferencesProvider
+    this.favoriteMovieProvider
       .getFavoriteMovies()
       .then(favs => (this.favoriteMovies = favs));
   }

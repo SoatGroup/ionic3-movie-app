@@ -10,7 +10,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   templateUrl: "movie-list.html"
 })
 export class MovieListPage {
-  movies: IMovie[] = [];
+  movies = new Array<IMovie>();
 
   constructor(
     public navCtrl: NavController,
@@ -19,9 +19,9 @@ export class MovieListPage {
   ) {}
 
   ionViewDidLoad() {
-    this.movieApiProvider.getMovies().subscribe(data =>{
+    this.movieApiProvider.getMovies().subscribe(data => {
       this.movies = data;
-    })
+    });
   }
 
   goToDetail(movie: IMovie) {

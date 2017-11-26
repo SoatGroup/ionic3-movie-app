@@ -1,4 +1,4 @@
-import { UserPreferencesProvider } from "../../providers/user-preferences/user-preferences";
+import { FavoriteMovieProvider } from "../../providers/favorite-movie/favorite-movie";
 import { IMovie } from "../../interface/IMovie";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
@@ -10,28 +10,23 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 })
 export class MovieDetailPage {
   movie: IMovie;
-  favorite: boolean = false;
+  isFavorite: boolean = false;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private userPreferencesProvider: UserPreferencesProvider
+    private favoriteMovieProvider: FavoriteMovieProvider
   ) {}
 
   ionViewDidLoad() {
     this.movie = this.navParams.data;
-    this.userPreferencesProvider
-      .isFavortieMovie(this.movie.id)
-      .then(value => (this.favorite = value));
+    this.favoriteMovieProvider
+      .isFavortieMovie(this.movie)
+      .then(value => (this.isFavorite = value));
   }
 
   toggleFavorite(): void {
-    if (this.favorite) {
-      this.favorite = false;
-      this.userPreferencesProvider.unfavoriteMovie(this.movie);
-    } else {
-      this.favorite = true;
-      this.userPreferencesProvider.favoriteMovie(this.movie);
-    }
+    this.isFavorite = !this.isFavorite;
+    this.favoriteMovieProvider.toogleFavoriteMovie(this.movie);
   }
 }

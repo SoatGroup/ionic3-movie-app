@@ -12,7 +12,7 @@ import { MyApp } from "./app.component";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { MovieApiProvider } from "../providers/movie-api/movie-api";
-import { UserPreferencesProvider } from '../providers/user-preferences/user-preferences';
+import { FavoriteMovieProvider } from "../providers/favorite-movie/favorite-movie";
 
 @NgModule({
   declarations: [MyApp],
@@ -32,7 +32,7 @@ import { UserPreferencesProvider } from '../providers/user-preferences/user-pref
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     MovieApiProvider,
-    UserPreferencesProvider
+    FavoriteMovieProvider
   ]
 })
 export class AppModule {}
