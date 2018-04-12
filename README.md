@@ -1,4 +1,4 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+This is a starter [Ionic](http://ionicframework.com/docs/) project.
 
 ## Installation
 You will need to have Ionic & Cordova installed : 
@@ -7,7 +7,7 @@ You will need to have Ionic & Cordova installed :
 npm install -g cordova ionic
 ```
 
-## How to run this project with Ionic CLI:
+## Run the project with Ionic CLI:
 
 ```bash
 $ npm install
@@ -21,5 +21,5 @@ $ ionic cordova platform add android
 $ ionic cordova run android
 ```
 
-For more information about this project check this [blog post](http://blog.soat.fr/2017/12/ionic-3-creez-votre-application-mobile/)
+For more information about this project check the related [blog post](http://blog.soat.fr/2017/12/ionic-3-creez-votre-application-mobile/)
 
