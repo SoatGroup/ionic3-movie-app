@@ -21,5 +21,5 @@ $ ionic cordova platform add android
 $ ionic cordova run android
 ```
 
-For more information about this project check the related [blog post](http://blog.soat.fr/2017/12/ionic-3-creez-votre-application-mobile/)
+For more information about this project check the related [blog post](http://blog.soat.fr/2017/12/ionic-3-creez-votre-application-mobile/) and for more of my work check my [Github account](https://github.com/LamineMbn)
 
